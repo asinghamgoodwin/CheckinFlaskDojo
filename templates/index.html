@@ -1,0 +1,30 @@
+<html>
+<head>
+
+</head>
+<body>
+	<h1> Yay, It's Check In Time!!!</h1>
+	<p> Hello World</p>
+	<form action="" method="post" name="login">
+	{{ form.hidden_tag() }}
+	<p>
+	  Please enter your name<br>
+	  {{ form.name(size=30) }}
+	  {{ form.room() }}
+	</p>
+
+	<p><input type="submit" value="Submit"></p>
+  </form>
+  <hr>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <li>{{ message }} </li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</body>
+
+</html>
