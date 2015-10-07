@@ -15,7 +15,23 @@
 
 	<p><input type="submit" value="Submit"></p>
   </form>
+
+  <table>
+    <tr>
+    {% for r in rooms.keys() %}
+      <td><strong> {{ r }} </strong>
+      <br>
+      {%for person in rooms[r]%}
+        {{person}}
+        <br>
+      {% endfor %}
+    </td>
+    {% endfor %}
+  </tr>
+  </table>
+
   <hr>
+
     {% with messages = get_flashed_messages() %}
       {% if messages %}
         <ul>

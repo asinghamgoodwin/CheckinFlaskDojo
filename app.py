@@ -10,7 +10,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-# https://github.com/miguelgrinberg/Flask-Migrate
-
 manager = Manager(app)
 manager.add_command('db', MigrateCommand)
+
+# https://github.com/miguelgrinberg/Flask-Migrate
+
